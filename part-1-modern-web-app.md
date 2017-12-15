@@ -7,5 +7,12 @@ What are the tools for maintaining your sanity in the front end of the stack?
 # Understand Your Build
 - whats in a `package.json`?
 - how can you leverage `package.json` to get started? 
+- What does `building` mean? 
 # Pick your ecosystem (React vs Angular vs Vue vs ?!?!?!?)
-
+- What is Angular
+- What is React
+- What about all those other shiny new kids on the block? 
+# Demo
+- npm init
+- What do all the questions mean?
+- What are the main sections of a package.json for and how are they used? 
