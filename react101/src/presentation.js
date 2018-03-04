@@ -14,6 +14,7 @@ import {
   List,
   Notes,
   Quote,
+  S,
   Slide,
   Text,
   Typeface,
@@ -27,20 +28,35 @@ import createTheme from 'spectacle/lib/themes/default';
 // Require CSS
 require('normalize.css');
 
-
 const theme = createTheme(
   {
-    primary: '#fff',
-    secondary: '#1F2022',
-    tertiary: '#1F2022',
-    quarternary: '#f0f0f0',
+    primary: '#282c34',
+    secondary: '#fff',
+    tertiary: '#fff',
+    quarternary: 'rgba(26,29,35,.5)',
     reactBlue: '#60dbfb',
   },
   {
-    primary: 'Montserrat',
-    secondary: 'Helvetica',
-    tertiary: {name: 'Droid Serif', googleFont: true, styles: ['400', '700i']},
+    primary: {name: 'Oswald', googleFont: true, styles: ['400', '700i']},
+    pp: {name: 'PT Sans', googleFont: true, styles: ['400', '700i']},
+    // primary: "Arial Narrow"
+    primary: 'Avenir',
   },
+);
+
+const StyledLink = styled(Link)`
+  color: #fff;
+  &:visited,
+  &:active,
+  &:focus {
+    color: #fff;
+  }
+`;
+
+const Reference = ({href}) => (
+  <LI textSize={30}>
+    <StyledLink href={href}>{href}</StyledLink>
+  </LI>
 );
 
 const ReactSpan = styled.span`
@@ -50,25 +66,40 @@ const CJSpan = styled.span`
   color: rgb(0, 175, 102);
 `;
 const StyledList = styled(List)`
- list-style: none;
- margin-top: 0;
+  list-style: none;
+  margin-top: 0;
 `;
 const LI = styled(ListItem)`
   line-height: 1.6em;
   padding-left: 10px;
 `;
 
+const T = props => <Text textColor="secondary" {...props} />;
 const H = ({children, ...props}) => (
-  <Heading fit={!props.size} caps lineHeight={1} {...props}>
+  <Heading
+    textColor="secondary"
+    fit={!props.size}
+    caps
+    lineHeight={1}
+    {...props}>
     {children}
   </Heading>
 );
 
-const H5 = props => <H size={6} {...props} />;
+const H5 = props => <H size={5} {...props} />;
+const H6 = props => <H size={6} {...props} />;
+
+const AppearText = ({children, ...props}) => (
+  <Appear>
+    <Text textColor="secondary" {...props}>
+      {children}
+    </Text>
+  </Appear>
+);
 
 const AppearFitText = props => (
   <Appear>
-    <Text fit {...props} />
+    <Text textColor="secondary" fit {...props} />
   </Appear>
 );
 
@@ -85,19 +116,20 @@ export default class Presentation extends React.Component {
             Introduction to <ReactSpan>React</ReactSpan>
           </H>
 
-          <Text textAlign="right">March 2018</Text>
-          <Text textAlign="right">WLVJS</Text>
+          <T textAlign="right">March 2018</T>
+          <T textAlign="right">WLVJS</T>
           <Notes>
             <ul>
               <li>welcome</li>
 
               <li>3rd in the series on modern JS libraries</li>
               <li>use a simple stopwatch timer to explore Angular and React</li>
-
             </ul>
             <ul>
               <li>Recap:</li>
-              <li>started with history lession + modern tooling + vanilla js timer</li>
+              <li>
+                started with history lession + modern tooling + vanilla js timer
+              </li>
               <li>matt taught us some angular last month</li>
               <li>tonight i'm hoping to get us up and running with React</li>
             </ul>
@@ -109,13 +141,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <Heading size={1} fit caps lineHeight={1}>
-            Franklin Henderson
-          </Heading>
-          <Text textAlign="right">@fhwrdh</Text>
-          <Text textAlign="right">
+          <H>Franklin Henderson</H>
+          <T textAlign="right">@fhwrdh</T>
+          <T textAlign="right">
             <CJSpan>CJ Affiliate</CJSpan>
-          </Text>
+          </T>
           <Notes>
             <ul>
               <li>@fhwrdh</li>
@@ -127,41 +157,46 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
+          <img src={ReactLogo} height="5%" />
+          <Notes>
+            <ul>
+              <li>to get a sense of where people are with React...</li>
+              <li>[who has heard of before tonight?]</li>
+              <li>(keep hands up)</li>
+              <li>[who has tried?]</li>
+              <li>[who has used it seriously?]</li>
+              <li>[who uses it daily in their work?]</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide>
           <H>Disclaimer</H>
           <AppearFitText>We aren't getting to everything tonight</AppearFitText>
           <AppearFitText bold>Choices were made</AppearFitText>
           <Notes>
             <ul>
-              <li>I should start with a disclaimer...</li>
+              <li>So now a disclaimer...</li>
               <li>This topic is huge and 45 minutes isn't enough</li>
               <li>So I had to make some choices</li>
-              <li>My hope is that, if there is interest, I can give some future talks to add to what's here</li>
+              <li>
+                My hope is that, if there is interest, I can give some future
+                talks to add to what's here
+              </li>
             </ul>
             <ul>
               <li>I thought the most valuable thing I could do</li>
               <li>...get people up and running</li>
               <li>...explain some basic concepts</li>
-              <li>Everyone here should be able to get started experimenting with React after tonight</li>
+              <li>
+                Everyone here should be able to get started experimenting with
+                React after tonight
+              </li>
             </ul>
           </Notes>
         </Slide>
 
         <Slide>
-          <img src={ReactLogo} height="5%" />
-          <Notes>
-            <ul>
-              <li>to get a sense of where people are with React...</li>
-              <li>(keep hands up)</li>
-              <li>[who has heard of before tonight?]</li>
-              <li>[who has tried?]</li>
-              <li>[who has used it seriously?]</li>
-              <li>[who uses it regularly?]</li>
-            </ul>
-          </Notes>
-        </Slide>
-
-        <Slide>
-          <H>Agenda</H>
           <H5>create-react-app</H5>
           <H5>JSX</H5>
           <H5>components</H5>
@@ -170,13 +205,21 @@ export default class Presentation extends React.Component {
           <H5>state</H5>
           <Notes>
             <ul>
+              <li>So here is an agenda for tonight...</li>
               <li>CRA: a massive shortcut to get us started. </li>
               <li>JSX: usually the first place people trip up</li>
-              <li>components / props / state: these are the bread and butter</li>
+              <li>
+                components / lifecycle / props / state: these are the
+                foundational concepts
+              </li>
+              <li>Once you understand these, </li>
             </ul>
 
             <ul>
-              <li>but lets start by talking about some of the things you may have heard about React...</li>
+              <li>
+                but lets start by talking about some of the things you may have
+                heard about React...
+              </li>
             </ul>
           </Notes>
         </Slide>
@@ -185,78 +228,152 @@ export default class Presentation extends React.Component {
           <img src={ReactLogo} height="5%" />
           <Notes>
             <ul>
-              <li>but lets start by talking about some of the things you may have heard about React...</li>
+              <li>
+                but lets start by talking about some of the things you may have
+                heard about React...
+              </li>
             </ul>
           </Notes>
         </Slide>
 
-        <Slide>
-          <H>library? framework?</H>
-          <Notes>
-            <ul>
-              <li>some call it a library, others call it a framework</li>
-              <li>[who knows the diff?]</li>
-            </ul>
-          </Notes>
-        </Slide>
         <Slide>
           <H>A JavaScript library for</H>
           <H>building user interfaces</H>
-          <Appear>
-            <Text>"The V in MVC"</Text>
-          </Appear>
+          <AppearText>formerly, "The V in MVC"</AppearText>
+
+          <Notes>
+            <ul>
+              <li>React is often called a 'framework'</li>
+              <li>Facebook calls it...</li>
+              <li>
+                When it was released in March of 2013, they said it was "The V
+                in MVC"
+              </li>
+            </ul>
+          </Notes>
         </Slide>
+
         <Slide>
+          <H>Modern</H>
           <H>Functional</H>
           <H>Declarative</H>
           <H>Component Based</H>
+
+          <Notes>
+            <ul>
+              <li>MODERN</li>
+              <li>early ES6 adoption: arrow funcs, classes</li>
+              <li>because of jsx, babel and a build pipeline is assumed</li>
+            </ul>
+
+            <ul>
+              <li>FUNCTIONAL</li>
+              <li>much of the API uses pure functions and immutability</li>
+              <li>components can be defined as functions</li>
+            </ul>
+
+            <ul>
+              <li>DECLARATIVE</li>
+              <li>JSX + VDOM</li>
+              <li>no direct DOM manipulation</li>
+            </ul>
+
+            <ul>
+              <li>COMPONENT BASED</li>
+              <li>Everything is a reusable box on the screen</li>
+              <li>data (state) + behavior</li>
+              <li>components generally compose nicely</li>
+            </ul>
+          </Notes>
         </Slide>
+
         <Slide>
           <H>Just JavaScript</H>
-          <Appear><Text>...and JSX</Text></Appear>
+          <AppearText>...and JSX</AppearText>
+
+          <Notes>
+            <ul>
+              <li>unlike what we saw with angular, React has no templates</li>
+              <li>
+                rather than inventing new syntax for loops and other constructs
+              </li>
+              <li>
+                this allows React to play nicely with 3rd party libs like
+                lodash, etc.
+              </li>
+              <li>...and even libs that don't exist yet</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide>
           <H>create-react-app</H>
+          <AppearText caps>node (>=6) cli</AppearText>
+          <AppearText caps>react project without config</AppearText>
+          <AppearText caps>build for production</AppearText>
+          <AppearText caps>testing with Jest</AppearText>
+          <AppearText caps>dev server</AppearText>
+          <AppearText caps>user guide</AppearText>
+          <AppearText caps>ejectable</AppearText>
+          <Notes>
+            <ul>
+              <li>EJECTABLE</li>
+              <li>CRA pilosophy is to restrict/save you with no config</li>
+              <li>if you really need something, eject</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide>
-          <H>create-react-app</H>
-        </Slide>
-
-        <Slide>
-          <H>JSX</H>
-        </Slide>
-        <Slide>
-          <H>props</H>
-        </Slide>
-        <Slide>
-          <H>state</H>
+          <H>Timer Time</H>
         </Slide>
 
         <Slide>
           <H>What Else?</H>
-          <H5>Presentational vs Container</H5>
-          <H5>More Lifecycle methods</H5>
-          <H5>Fetching Data</H5>
-          <H5>Testing</H5>
-          <H5>Redux</H5>
-          <H5>CSS</H5>
-          <H5>?</H5>
-
-
-
+          <H6>Controlled Form Components</H6>
+          <H6>Server side rendering</H6>
+          <H6>Component Patterns</H6>
+          <H6>Render Props vs HOC</H6>
+          <H6>Client Side Routing</H6>
+          <H6>Lifecycle methods</H6>
+          <H6>Error Boundaries</H6>
+          <H6>Data Fetching</H6>
+          <H6>React Native</H6>
+          <H6>Fragments</H6>
+          <H6>Context</H6>
+          <H6>Portals</H6>
+          <H6>Testing</H6>
+          <H6>Redux</H6>
+          <H6>Forms</H6>
+          <H6>Refs</H6>
+          <H6>CSS</H6>
         </Slide>
 
         <Slide>
           <H>References</H>
           <StyledList>
-            <LI textSize={18}><Link href="">https://egghead.io/courses/the-beginner-s-guide-to-reactjs</Link></LI>
-            <LI textSize={18}><Link href="">https://reactjs.org/tutorial/tutorial.html</Link></LI>
+            <Reference href="https://reactjs.org/tutorial/tutorial.html" />
+            <Reference href="https://reactjs.org/docs/thinking-in-react.html" />
+            <Reference href="https://egghead.io/courses/the-beginner-s-guide-to-reactjs" />
+            <Reference href="https://reactarmory.com/guides/learn-react-by-itself" />
+            <Reference href="https://reacttraining.com/patterns/" />
+            <Reference href="https://www.reactiflux.com/" />
+            <Reference href="https://github.com/facebook/create-react-app" />
           </StyledList>
         </Slide>
+
         <Slide>
           <H>Questions?</H>
+        </Slide>
+
+        <Slide>
+          <H>Thank You</H>
+          <T textAlign="right" textSize={24}>
+            Built with{' '}
+            <StyledLink href="http://formidable.com/open-source/spectacle/">
+              Spectacle
+            </StyledLink>
+          </T>
         </Slide>
       </Deck>
     );
