@@ -86,6 +86,8 @@ const H = ({children, ...props}) => (
   </Heading>
 );
 
+const H1 = props => <H size={1} {...props} />;
+const H2 = props => <H size={2} {...props} />;
 const H5 = props => <H size={5} {...props} />;
 const H6 = props => <H size={6} {...props} />;
 
@@ -322,6 +324,26 @@ export default class Presentation extends React.Component {
               <li>if you really need something, eject</li>
             </ul>
           </Notes>
+        </Slide>
+
+        <Slide>
+          <H1>JSX</H1>
+          <AppearText caps>Brings markup into JS</AppearText>
+          <AppearText caps>sugar over createElement()</AppearText>
+          <AppearText caps>includes all html elements / attributes* </AppearText>
+          <AppearText caps>built-in and custom components mix seamlessly</AppearText>
+
+          <Notes>
+            <ul>
+              <li>one of the things that turns people off at first</li>
+              <li>whereas Angular extends markup with programming language concepts, React does the opposite and brings the markup right into the JS</li>
+              <li></li>
+            </ul>
+          </Notes>
+
+
+
+
         </Slide>
 
         <Slide>
