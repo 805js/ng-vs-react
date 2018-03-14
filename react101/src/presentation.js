@@ -186,11 +186,11 @@ export default class Presentation extends React.Component {
           <img src={ReactLogo} height="5%" alt="react" />
           <Notes>
             <ul>
-              <li>to get a sense of where people are with React...</li>
-              <li>[who has heard of before tonight?]</li>
-              <li>(keep hands up)</li>
+              <li>So lets try to get a sense of where we all are with React...</li>
+              <li>Put your hand up if...</li>
+              <li>[you have heard of react before tonight?]</li>
               <li>[who has tried?]</li>
-              <li>[who has used it seriously?]</li>
+              <li>[who has shipped something to production?]</li>
               <li>[who uses it daily in their work?]</li>
             </ul>
           </Notes>
