@@ -340,21 +340,69 @@ export default class Presentation extends React.Component {
         <Slide>
           <H1>JSX</H1>
           <AppearText caps>Brings markup into JS</AppearText>
+          <AppearText caps>all html elements / attributes* </AppearText>
+          <AppearText caps>built-in and custom components</AppearText>
           <AppearText caps>sugar over createElement()</AppearText>
-          <AppearText caps>includes all html elements / attributes* </AppearText>
-          <AppearText caps>built-in and custom components mix seamlessly</AppearText>
+          <AppearText caps>
+            <StyledLink
+              target="_blank"
+              href="https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA">
+              Babel Example
+            </StyledLink>
+          </AppearText>
 
           <Notes>
             <ul>
               <li>one of the things that turns people off at first</li>
-              <li>whereas Angular extends markup with programming language concepts, React does the opposite and brings the markup right into the JS</li>
-              <li></li>
+              <li>
+                whereas Angular extends markup with programming language
+                constructs, React does the opposite and brings the markup right
+                into the JS
+              </li>
+              <li>
+                'class' and 'for' are js keywords, so 'className' and 'htmlFor'
+              </li>
+              <li>the best way to explain is with an example</li>
             </ul>
           </Notes>
+        </Slide>
 
+        <Slide>
+          <H>Components</H>
+          <AppearText caps>functional</AppearText>
+          <AppearText caps>class</AppearText>
+        </Slide>
 
+        <Slide>
+          <H>Lifecycle methods</H>
+          <AppearText textColor="reactBlue">render</AppearText>
 
+          <AppearText textColor="reactBlue">constructor</AppearText>
+          <AppearText textColor="reactBlue">componentDidMount</AppearText>
 
+          <AppearText>componentWillMount</AppearText>
+          <AppearText>componentWillReceiveProps</AppearText>
+          <AppearText>shouldComponentUpdate</AppearText>
+          <AppearText>componentDidUpdate</AppearText>
+          <AppearText>componentWillUnmount</AppearText>
+
+          <Notes>
+            <ul>
+              <li>RENDER</li>
+              <li>the only required one</li>
+              <li>the only one you get in a functional comp</li>
+            </ul>
+
+            <ul>
+              <li>CTOR</li>
+              <li>setup initial state</li>
+            </ul>
+
+            <ul>
+              <li>COMPONENTDIDMOUNT</li>
+              <li>usually where to kick off any data fetching</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide>
