@@ -411,16 +411,16 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <H>What Else?</H>
-          <H6>Controlled Form Components</H6>
           <H6>Server side rendering</H6>
           <H6>Component Patterns</H6>
           <H6>Render Props vs HOC</H6>
-          <H6>Client Side Routing</H6>
           <H6>Lifecycle methods</H6>
           <H6>Error Boundaries</H6>
+          <H6>Form Components</H6>
           <H6>Data Fetching</H6>
           <H6>React Native</H6>
           <H6>Fragments</H6>
+          <H6>Routing</H6>
           <H6>Context</H6>
           <H6>Portals</H6>
           <H6>Testing</H6>
