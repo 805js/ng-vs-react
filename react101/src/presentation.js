@@ -5,6 +5,8 @@ import styled from 'styled-components';
 // Import Spectacle Core tags
 import {
   Appear,
+  Code,
+  CodePane,
   Deck,
   Heading,
   Link,
@@ -98,7 +100,8 @@ const H = ({children, ...props}) => (
 );
 
 const H1 = props => <H size={1} {...props} />;
-// const H2 = props => <H size={2} {...props} />;
+const H2 = props => <H size={2} {...props} />;
+const H3 = props => <H size={3} {...props} />;
 const H5 = props => <H size={5} {...props} />;
 const H6 = props => <H size={6} {...props} />;
 
@@ -509,9 +512,85 @@ export default class Presentation extends React.Component {
               <li>often where to kick off any data fetching</li>
             </UL>
             <UL>
-              <li>5</li>
-              <li>this is not all of them</li>
-              <li>new ones added in 16 re: errors</li>
+              <li>6</li>
+              <li>this is all of them</li>
+              <li>new one added in 16 re: errors</li>
+            </UL>
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <H3>PROPS</H3>
+
+          <Appear>
+            <CodePane
+              language="javascript"
+              theme="external"
+              source={`
+  import {formatMillis} from './util';
+
+  const Counter = ({time, onClick}) => (
+    <div className="counter" onClick={onClick}>
+      <div className="elapsed">{formatMillis(time)}</div>
+    </div>
+  );
+              `}
+            />
+          </Appear>
+
+
+          <Appear>
+            <CodePane
+              language="javascript"
+              theme="external"
+              source={`
+  class Timer extends React.Component {
+
+    handleClick() {
+      ...
+    }
+
+    render() {
+      const millis = new Date().getTime();
+      return (
+        <Counter time={millis} onClick={this.handleClick} />
+      );
+    }
+  }
+
+              `}
+            />
+          </Appear>
+
+          <Notes>
+            <UL>
+              <li>PROPS</li>
+              <li>props are how you communicate between components</li>
+              <li>data, functions, other components occasionally</li>
+              <li>if components are functions, props are the arguments</li>
+              <li>immutable</li>
+              <li>the props form a contract between components</li>
+            </UL>
+            <UL>
+              <li>1</li>
+              <li>This Counter component takes some props as args</li>
+              <li>we are using ES6 descructuring to extract the props we need</li>
+
+            </UL>
+            <UL>
+              <li>2</li>
+              <li>And here is the Timer component that uses the Counter</li>
+              <li>It provides values to the Counter for its props</li>
+            </UL>
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <H3>State</H3>
+
+          <Notes>
+            <UL>
+              <li></li>
             </UL>
           </Notes>
         </Slide>
