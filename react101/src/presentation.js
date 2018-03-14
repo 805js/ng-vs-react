@@ -451,12 +451,20 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <H>Thank You</H>
-          <T textAlign="right" textSize={24}>
+          <StyledList>
+            <Reference href="https://github.com/805js/ng-vs-react" />
+            <Reference href="https://github.com/805js/react-timer" />
+          </StyledList>
+        </Slide>
+
+        <Slide>
+          <T textAlign="center" textSize={18} style={{ fontVariant: "all-small-caps"}}>
             Built with{' '}
             <StyledLink href="http://formidable.com/open-source/spectacle/">
               Spectacle
             </StyledLink>
           </T>
+
         </Slide>
       </Deck>
     );
