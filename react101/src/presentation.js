@@ -588,9 +588,45 @@ export default class Presentation extends React.Component {
         <Slide>
           <H3>State</H3>
 
+          <Appear>
+            <CodePane
+              language="javascript"
+              theme="external"
+              source={`
+  class Timer extends React.Component {
+    state = {
+      millis: 0,
+      clicked: false
+    };
+
+    ...
+
+    handleClick() {
+      this.setState(state => ({
+        ...state,
+        clicked: true
+      }));
+    }
+
+    render() {
+      const { millis, clicked } = this.state;
+      return (
+        <Counter time={millis} onClick={this.handleClick} />
+        <ClickIndicator clicked={clicked} />
+      );
+    }
+  }
+
+              `}
+            />
+          </Appear>
+
           <Notes>
             <UL>
-              <li></li>
+              <li>State is the data that a component owns and manages</li>
+              <li>in this case, the milliseconds and the whether or not the counter was clicked</li>
+              <li>setState can take an object, or a function</li>
+              <li>setState triggers the update lifecycle methods</li>
             </UL>
           </Notes>
         </Slide>
