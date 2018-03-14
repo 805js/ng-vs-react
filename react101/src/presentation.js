@@ -681,6 +681,11 @@ export default class Presentation extends React.Component {
             <Reference href="https://github.com/805js/ng-vs-react" />
             <Reference href="https://github.com/805js/react-timer" />
           </StyledList>
+          <Notes>
+            <ul>
+              <li>thanks again to hub101 for hosting and vmware for sponsoring this month</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide>
