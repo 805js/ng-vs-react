@@ -479,33 +479,40 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <H>Lifecycle methods</H>
-          <AppearText textColor="reactBlue">render</AppearText>
-
           <AppearText textColor="reactBlue">constructor</AppearText>
-          <AppearText textColor="reactBlue">componentDidMount</AppearText>
-
           <AppearText>componentWillMount</AppearText>
+          <AppearText textColor="reactBlue">render</AppearText>
+          <AppearText textColor="reactBlue">componentDidMount</AppearText>
           <AppearText>componentWillReceiveProps</AppearText>
           <AppearText>shouldComponentUpdate</AppearText>
+          <AppearText>componentWillUpdate</AppearText>
           <AppearText>componentDidUpdate</AppearText>
           <AppearText>componentWillUnmount</AppearText>
+          <AppearText>componentDidCatch</AppearText>
 
           <Notes>
-            <ul>
+            <UL>
+              <li>CTOR</li>
+              <li>setup initial state</li>
+            </UL>
+            <UL>
+            </UL>
+            <UL>
               <li>RENDER</li>
               <li>the only required one</li>
               <li>the only one you get in a functional comp</li>
-            </ul>
-
-            <ul>
-              <li>CTOR</li>
-              <li>setup initial state</li>
-            </ul>
-
-            <ul>
+              <li>props + state => UI</li>
+            </UL>
+            <UL>
               <li>COMPONENTDIDMOUNT</li>
-              <li>usually where to kick off any data fetching</li>
-            </ul>
+              <li>gets called when a component is first added to the DOM</li>
+              <li>often where to kick off any data fetching</li>
+            </UL>
+            <UL>
+              <li>5</li>
+              <li>this is not all of them</li>
+              <li>new ones added in 16 re: errors</li>
+            </UL>
           </Notes>
         </Slide>
 
