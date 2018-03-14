@@ -21,7 +21,6 @@ import ReactLogo from './React-icon.svg';
 import createTheme from 'spectacle/lib/themes/default';
 import CJLogoPng from './cj.png';
 
-
 // Require CSS
 require('normalize.css');
 
@@ -114,6 +113,13 @@ const AppearFitText = props => (
   </Appear>
 );
 
+const UL = styled.ul`
+  list-style-type: square;
+  border: 1px solid #555;
+  padding: 10px 5px;
+  padding-left: 26px;
+`;
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -156,8 +162,8 @@ export default class Presentation extends React.Component {
           <T textAlign="right">@fhwrdh</T>
           <T textAlign="right">
             <Row>
-            <CJLogo src={CJLogoPng} />
-            <CJSpan>CJ Affiliate</CJSpan>
+              <CJLogo src={CJLogoPng} />
+              <CJSpan>CJ Affiliate</CJSpan>
             </Row>
           </T>
           <Notes>
@@ -312,7 +318,8 @@ export default class Presentation extends React.Component {
                 rather than inventing new syntax for loops and other constructs
               </li>
               <li>
-                this allows React to play nicely with 3rd party libs like lodash, etc.
+                this allows React to play nicely with 3rd party libs like
+                lodash, etc.
               </li>
               <li>...and even libs that don't exist yet</li>
             </ul>
@@ -321,20 +328,53 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <H>create-react-app</H>
-          <AppearText caps>node (>=6) cli</AppearText>
           <AppearText caps>react project without config</AppearText>
-          <AppearText caps>build for production</AppearText>
-          <AppearText caps>testing with Jest</AppearText>
           <AppearText caps>dev server</AppearText>
-          <AppearText caps>user guide</AppearText>
+          <AppearText caps>testing with Jest</AppearText>
+          <AppearText caps>build for production</AppearText>
           <AppearText caps>ejectable</AppearText>
+          <AppearText caps>user guide</AppearText>
           <Notes>
-            <ul>
+            <UL>
+              <li>does what it says on the tin!</li>
+            </UL>
+            <UL>
+              <li>NO CONFIG</li>
+              <li>without the overwhelming setup</li>
+              <li>webpack, babel, polyfills, jest, eslint</li>
+            </UL>
+            <UL>
+              <li>DEV SERVER</li>
+              <li>npm run start</li>
+              <li>hot reloading</li>
+
+            </UL>
+            <UL>
+              <li>TESTING</li>
+              <li>npm run test</li>
+              <li>jest built in</li>
+              <li>or you can setup your own</li>
+            </UL>
+            <UL>
+              <li>BUILD</li>
+                <li>npm run build</li>
+              <li>optimized build of static assets</li>
+            </UL>
+            <UL>
               <li>EJECTABLE</li>
-              <li>CRA pilosophy is to restrict/save you with no config</li>
+              <li>npm run eject</li>
+              <li>CRA philosophy is to restrict/save you with no config</li>
               <li>if you really need something, eject</li>
-            </ul>
+            </UL>
+            <UL>
+              <li>USER GUIDE</li>
+              <li>One of the best documented and managed OSS projects I've seen recently</li>
+            </UL>
           </Notes>
+        </Slide>
+
+        <Slide>
+          <H>CRA TIME</H>
         </Slide>
 
         <Slide>
