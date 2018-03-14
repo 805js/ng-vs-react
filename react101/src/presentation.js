@@ -5,25 +5,22 @@ import styled from 'styled-components';
 // Import Spectacle Core tags
 import {
   Appear,
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   Link,
   ListItem,
   List,
   Notes,
-  Quote,
-  S,
   Slide,
   Text,
-  Typeface,
 } from 'spectacle';
 
 import ReactLogo from './React-icon.svg';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
+import CJLogoPng from './cj.png';
+
 
 // Require CSS
 require('normalize.css');
@@ -37,7 +34,7 @@ const theme = createTheme(
     reactBlue: '#60dbfb',
   },
   {
-    primary: {name: 'Oswald', googleFont: true, styles: ['400', '700i']},
+    // primary: {name: 'Oswald', googleFont: true, styles: ['400', '700i']},
     pp: {name: 'PT Sans', googleFont: true, styles: ['400', '700i']},
     // primary: "Arial Narrow"
     primary: 'Avenir',
@@ -45,17 +42,19 @@ const theme = createTheme(
 );
 
 const StyledLink = styled(Link)`
-  color: #fff;
+  color: #60dbfb;
   &:visited,
   &:active,
   &:focus {
-    color: #fff;
+    color: #60dbfb;
   }
 `;
 
 const Reference = ({href}) => (
   <LI textSize={30}>
-    <StyledLink href={href}>{href}</StyledLink>
+    <StyledLink target="_blank" href={href}>
+      {href}
+    </StyledLink>
   </LI>
 );
 
@@ -74,7 +73,17 @@ const LI = styled(ListItem)`
   padding-left: 10px;
 `;
 
+const CJLogo = styled.img`
+  height: 40px;
+  margin-right: 5px;
+`;
 const T = props => <Text textColor="secondary" {...props} />;
+const Row = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
 const H = ({children, ...props}) => (
   <Heading
     textColor="secondary"
@@ -87,7 +96,7 @@ const H = ({children, ...props}) => (
 );
 
 const H1 = props => <H size={1} {...props} />;
-const H2 = props => <H size={2} {...props} />;
+// const H2 = props => <H size={2} {...props} />;
 const H5 = props => <H size={5} {...props} />;
 const H6 = props => <H size={6} {...props} />;
 
@@ -146,7 +155,10 @@ export default class Presentation extends React.Component {
           <H>Franklin Henderson</H>
           <T textAlign="right">@fhwrdh</T>
           <T textAlign="right">
+            <Row>
+            <CJLogo src={CJLogoPng} />
             <CJSpan>CJ Affiliate</CJSpan>
+            </Row>
           </T>
           <Notes>
             <ul>
@@ -159,7 +171,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <img src={ReactLogo} height="5%" />
+          <img src={ReactLogo} height="5%" alt="react" />
           <Notes>
             <ul>
               <li>to get a sense of where people are with React...</li>
@@ -175,7 +187,7 @@ export default class Presentation extends React.Component {
         <Slide>
           <H>Disclaimer</H>
           <AppearFitText>We aren't getting to everything tonight</AppearFitText>
-          <AppearFitText bold>Choices were made</AppearFitText>
+          <AppearFitText caps>Choices were made</AppearFitText>
           <Notes>
             <ul>
               <li>So now a disclaimer...</li>
@@ -227,12 +239,12 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <img src={ReactLogo} height="5%" />
+          <img src={ReactLogo} height="5%" alt="react" />
           <Notes>
             <ul>
               <li>
-                but lets start by talking about some of the things you may have
-                heard about React...
+                ...but lets start by talking about some of the things you may
+                have heard about React...
               </li>
             </ul>
           </Notes>
@@ -264,7 +276,7 @@ export default class Presentation extends React.Component {
           <Notes>
             <ul>
               <li>MODERN</li>
-              <li>early ES6 adoption: arrow funcs, classes</li>
+              <li>early ES6 adoption: arrow funcs, classes, desctructuring</li>
               <li>because of jsx, babel and a build pipeline is assumed</li>
             </ul>
 
@@ -295,13 +307,12 @@ export default class Presentation extends React.Component {
 
           <Notes>
             <ul>
-              <li>unlike what we saw with angular, React has no templates</li>
+              <li>unlike what we saw with Angular, React has no templates</li>
               <li>
                 rather than inventing new syntax for loops and other constructs
               </li>
               <li>
-                this allows React to play nicely with 3rd party libs like
-                lodash, etc.
+                this allows React to play nicely with 3rd party libs like lodash, etc.
               </li>
               <li>...and even libs that don't exist yet</li>
             </ul>
@@ -365,6 +376,7 @@ export default class Presentation extends React.Component {
           <H6>Context</H6>
           <H6>Portals</H6>
           <H6>Testing</H6>
+          <H6>Events</H6>
           <H6>Redux</H6>
           <H6>Forms</H6>
           <H6>Refs</H6>
@@ -376,6 +388,7 @@ export default class Presentation extends React.Component {
           <StyledList>
             <Reference href="https://reactjs.org/tutorial/tutorial.html" />
             <Reference href="https://reactjs.org/docs/thinking-in-react.html" />
+            <Reference href="https://reactjs.org/docs/react-without-jsx.html" />
             <Reference href="https://egghead.io/courses/the-beginner-s-guide-to-reactjs" />
             <Reference href="https://reactarmory.com/guides/learn-react-by-itself" />
             <Reference href="https://reacttraining.com/patterns/" />
