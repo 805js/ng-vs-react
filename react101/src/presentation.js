@@ -422,6 +422,18 @@ export default class Presentation extends React.Component {
           <H>Components</H>
           <AppearText caps>functional</AppearText>
           <AppearText caps>class</AppearText>
+          <Notes>
+            <UL>
+              <li>two ways to define components, functions and es6 classes</li>
+            </UL>
+            <UL>
+              <li>generally, we use functions for simple, visual, "dumb" components</li>
+              <li>you only get a render method</li>
+            </UL>
+            <UL>
+              <li>we use classes when we need lifecycle methods or state mgmt</li>
+            </UL>
+          </Notes>
         </Slide>
 
         <Slide>
