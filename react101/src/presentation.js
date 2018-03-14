@@ -20,6 +20,9 @@ import ReactLogo from './React-icon.svg';
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
 import CJLogoPng from './cj.png';
+import Fuchs from './fuchs.png';
+import Thread from './thread.png';
+import Dan from './dan.png';
 
 // Require CSS
 require('normalize.css');
@@ -325,6 +328,44 @@ export default class Presentation extends React.Component {
             </ul>
           </Notes>
         </Slide>
+
+        <Slide>
+          <H>create-react-app</H>
+          <Notes>
+            <li>Lets start with a story...</li>
+          </Notes>
+
+        </Slide>
+
+        <Slide>
+          <img src={Fuchs} width="80%"/>
+          <Notes>
+            <li>March of 2016, Thomas Fuchs, posted this tweet</li>
+            <li>zepto, script.aculo.us, ruby on rails core</li>
+            <li>This captured a growing sentiment in the React ecosystem (and JS in general)</li>
+            <li>and touched a nerve</li>
+          </Notes>
+        </Slide>
+        <Slide>
+          <img src={Thread} width="30%"/>
+          <Notes>
+            <UL>
+            <li>Let me pull back to the thread that started with this tweet...</li>
+            <li>Notice the bottom reply from July</li>
+            <li>lets zoom in on that one...</li>
+          </UL>
+          </Notes>
+        </Slide>
+        <Slide>
+          <img src={Dan} width="80%"/>
+          <Notes>
+            <UL>
+            <li>Dan Abramov and Christopher Chedeau, who work at FB, decided in mid-July to do something about the situation.</li>
+            <li>and a week later they released 0.1.0 of create-react-app.</li>
+          </UL>
+          </Notes>
+        </Slide>
+
 
         <Slide>
           <H>create-react-app</H>
