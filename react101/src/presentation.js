@@ -382,7 +382,7 @@ export default class Presentation extends React.Component {
           <AppearText caps>Brings markup into JS</AppearText>
           <AppearText caps>all html elements / attributes* </AppearText>
           <AppearText caps>built-in and custom components</AppearText>
-          <AppearText caps>sugar over createElement()</AppearText>
+          <AppearText caps>sugar over React.createElement()</AppearText>
           <AppearText caps>
             <StyledLink
               target="_blank"
@@ -392,18 +392,29 @@ export default class Presentation extends React.Component {
           </AppearText>
 
           <Notes>
-            <ul>
+            <UL>
               <li>one of the things that turns people off at first</li>
+            </UL>
+            <UL>
               <li>
                 whereas Angular extends markup with programming language
-                constructs, React does the opposite and brings the markup right
+                constructs...</li>
+              <li>...React does the opposite and brings the markup right
                 into the JS
               </li>
+            </UL>
+            <UL>
+              <li>jsx supports all html elements and attributes</li>
               <li>
                 'class' and 'for' are js keywords, so 'className' and 'htmlFor'
               </li>
-              <li>the best way to explain is with an example</li>
-            </ul>
+            </UL>
+            <UL>
+              <li>but the power comes from defining your own or someone else's custom components</li>
+            </UL>
+            <UL>
+              <li>a good way to start to demystify jsx is to see what really runs in the browser</li>
+            </UL>
           </Notes>
         </Slide>
 
