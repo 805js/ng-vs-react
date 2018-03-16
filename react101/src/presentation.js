@@ -121,9 +121,13 @@ const AppearFitText = props => (
 
 const UL = styled.ul`
   list-style-type: square;
-  border: 1px solid #555;
+  border-bottom: 2px solid #FFF;
   padding: 10px 5px;
   padding-left: 26px;
+  & li {
+    margin-bottom: .7em;
+    line-height: 1.3em;
+  }
 `;
 
 export default class Presentation extends React.Component {
@@ -142,24 +146,22 @@ export default class Presentation extends React.Component {
           <T textAlign="right">March 2018</T>
           <T textAlign="right">WLVJS</T>
           <Notes>
-            <ul>
+            <UL>
               <li>welcome</li>
 
               <li>3rd in the series on modern JS libraries</li>
               <li>use a simple stopwatch timer to explore Angular and React</li>
-            </ul>
-            <ul>
+              <li></li>
               <li>Recap:</li>
               <li>
                 started with history lession + modern tooling + vanilla js timer
               </li>
               <li>matt taught us some angular last month</li>
               <li>tonight i'm hoping to get us up and running with React</li>
-            </ul>
-            <ul>
+              <li></li>
               <li>thank hub101 for hosting</li>
               <li>thank vmware for sponsoring this month</li>
-            </ul>
+            </UL>
           </Notes>
         </Slide>
 
@@ -173,26 +175,26 @@ export default class Presentation extends React.Component {
             </Row>
           </T>
           <Notes>
-            <ul>
+            <UL>
               <li>@fhwrdh</li>
               <li>CJ</li>
               <li>Writing JavaScript professionally since 1996</li>
               <li>Using React since late 2014</li>
-            </ul>
+            </UL>
           </Notes>
         </Slide>
 
         <Slide>
           <img src={ReactLogo} height="5%" alt="react" />
           <Notes>
-            <ul>
+            <UL>
               <li>So lets try to get a sense of where we all are with React...</li>
               <li>Put your hand up if...</li>
               <li>[you have heard of react before tonight?]</li>
               <li>[who has tried?]</li>
               <li>[who has shipped something to production?]</li>
               <li>[who uses it daily in their work?]</li>
-            </ul>
+            </UL>
           </Notes>
         </Slide>
 
@@ -201,24 +203,26 @@ export default class Presentation extends React.Component {
           <AppearFitText>We aren't getting to everything tonight</AppearFitText>
           <AppearFitText caps>Choices were made</AppearFitText>
           <Notes>
-            <ul>
+            <UL>
               <li>So now a disclaimer...</li>
-              <li>This topic is huge and 45 minutes isn't enough</li>
+            </UL>
+            <UL>
+              <li>This topic is huge and 30 - 45 minutes isn't enough</li>
+            </UL>
+            <UL>
               <li>So I had to make some choices</li>
               <li>
-                My hope is that, if there is interest, I can give some future
+                My hope is that, if people are interested, we can organize some future
                 talks to add to what's here
               </li>
-            </ul>
-            <ul>
-              <li>I thought the most valuable thing I could do</li>
+              <li>I thought the most valuable things I could do</li>
               <li>...get people up and running</li>
               <li>...explain some basic concepts</li>
               <li>
                 Everyone here should be able to get started experimenting with
                 React after tonight
               </li>
-            </ul>
+            </UL>
           </Notes>
         </Slide>
 
@@ -230,23 +234,22 @@ export default class Presentation extends React.Component {
           <H5>props</H5>
           <H5>state</H5>
           <Notes>
-            <ul>
-              <li>So here is an agenda for tonight...</li>
+            <UL>
+              <li>So here is our agenda for tonight...</li>
               <li>CRA: a massive shortcut to get us started. </li>
               <li>JSX: usually the first place people trip up</li>
               <li>
-                components / lifecycle / props / state: these are the
+                COMPONENTS / LIFECYCLE / PROPS / STATE: these are the
                 foundational concepts
               </li>
-              <li>Once you understand these, </li>
-            </ul>
-
-            <ul>
+              <li>With an understanding of these things, you are on your way to being productive with React</li>
+            </UL>
+            <UL>
               <li>
                 but lets start by talking about some of the things you may have
                 heard about React...
               </li>
-            </ul>
+            </UL>
           </Notes>
         </Slide>
 
@@ -268,14 +271,17 @@ export default class Presentation extends React.Component {
           <AppearText>formerly, "The V in MVC"</AppearText>
 
           <Notes>
-            <ul>
+            <UL>
               <li>React is often called a 'framework'</li>
               <li>Facebook calls it...</li>
+
+            </UL>
+            <UL>
               <li>
                 When it was released in March of 2013, they said it was "The V
                 in MVC"
               </li>
-            </ul>
+            </UL>
           </Notes>
         </Slide>
 
@@ -286,30 +292,27 @@ export default class Presentation extends React.Component {
           <H>Component Based</H>
 
           <Notes>
-            <ul>
+            <UL>
               <li>MODERN</li>
               <li>early ES6 adoption: arrow funcs, classes, desctructuring</li>
               <li>because of jsx, babel and a build pipeline is assumed</li>
-            </ul>
-
-            <ul>
+            </UL>
+            <UL>
               <li>FUNCTIONAL</li>
               <li>much of the API uses pure functions and immutability</li>
               <li>components can be defined as functions</li>
-            </ul>
-
-            <ul>
+            </UL>
+            <UL>
               <li>DECLARATIVE</li>
               <li>JSX + VDOM</li>
               <li>no direct DOM manipulation</li>
-            </ul>
-
-            <ul>
+            </UL>
+            <UL>
               <li>COMPONENT BASED</li>
               <li>Everything is a reusable box on the screen</li>
               <li>data (state) + behavior</li>
               <li>components generally compose nicely</li>
-            </ul>
+            </UL>
           </Notes>
         </Slide>
 
@@ -318,7 +321,10 @@ export default class Presentation extends React.Component {
           <AppearText>...and JSX</AppearText>
 
           <Notes>
-            <ul>
+            <UL>
+              <li>(next)</li>
+            </UL>
+            <UL>
               <li>unlike what we saw with Angular, React has no templates</li>
               <li>
                 rather than inventing new syntax for loops and other constructs
@@ -328,7 +334,9 @@ export default class Presentation extends React.Component {
                 lodash, etc.
               </li>
               <li>...and even libs that don't exist yet</li>
-            </ul>
+
+              <li>more on jsx in a bit</li>
+            </UL>
           </Notes>
         </Slide>
 
@@ -347,13 +355,13 @@ export default class Presentation extends React.Component {
             <li>zepto, script.aculo.us, ruby on rails core</li>
             <li>This captured a growing sentiment in the React ecosystem (and JS in general)</li>
             <li>and touched a nerve</li>
+            <li>Let me pull back to the thread that started with this tweet...</li>
           </Notes>
         </Slide>
         <Slide>
           <img src={Thread} width="30%"/>
           <Notes>
             <UL>
-            <li>Let me pull back to the thread that started with this tweet...</li>
             <li>Notice the bottom reply from July</li>
             <li>lets zoom in on that one...</li>
           </UL>
