@@ -5,7 +5,6 @@ import styled from 'styled-components';
 // Import Spectacle Core tags
 import {
   Appear,
-  Code,
   CodePane,
   Deck,
   Heading,
@@ -100,7 +99,7 @@ const H = ({children, ...props}) => (
 );
 
 const H1 = props => <H size={1} {...props} />;
-const H2 = props => <H size={2} {...props} />;
+// const H2 = props => <H size={2} {...props} />;
 const H3 = props => <H size={3} {...props} />;
 const H5 = props => <H size={5} {...props} />;
 const H6 = props => <H size={6} {...props} />;
@@ -349,7 +348,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <img src={Fuchs} width="80%"/>
+          <img src={Fuchs} width="80%" alt=""/>
           <Notes>
             <li>March of 2016, Thomas Fuchs, posted this tweet</li>
             <li>zepto, script.aculo.us, ruby on rails core</li>
@@ -359,7 +358,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <img src={Thread} width="30%"/>
+          <img src={Thread} width="30%" alt=""/>
           <Notes>
             <UL>
             <li>Notice the bottom reply from July</li>
@@ -368,7 +367,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <img src={Dan} width="80%"/>
+          <img src={Dan} width="80%" alt=""/>
           <Notes>
             <UL>
             <li>Dan Abramov and Christopher Chedeau, who work at FB, decided in mid-July to do something about the situation.</li>
